@@ -1,0 +1,20 @@
+* Yet Another LFE Quick Start
+** Purpose of this document
+*** Problems with Current Quick Guide
+Current quick guide http://docs.lfe.io/quick-start/1.html
+**** poorly designed structure.
+Googling for "writing structure" shows following at the very top:
+Written documents should be structured in a logical way, making them easier to
+follow.
+
+At the moment It's difficult to follow the current Quick guide.
+**** out of date
+Perhaps something will be done about it.
+**** information in wrong place
+QS section 1.1
+Note that lfetool supports Erlang R15, R16, and 17.0.
+should perhaps be in section 1.2
+**** dilemmas
+section 1.2
+Perhaps we need two separate paths for kerl and pre-built packages?
+Or maybe just stick to kerl?
