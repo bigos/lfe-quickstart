@@ -1,20 +1,45 @@
 * Yet Another LFE Quick Start
 ** Purpose of this document
-*** Problems with Current Quick Guide
+To explain why documentation has to change and suggest solution.
+** Problems with Current Quick Guide
 Current quick guide http://docs.lfe.io/quick-start/1.html
-**** poorly designed structure.
+*** poorly designed structure.
 Googling for "writing structure" shows following at the very top:
 Written documents should be structured in a logical way, making them easier to
 follow.
 
 At the moment It's difficult to follow the current Quick guide.
-**** out of date
+*** out of date
 Perhaps something will be done about it.
-**** information in wrong place
+*** information in wrong place
 QS section 1.1
 Note that lfetool supports Erlang R15, R16, and 17.0.
 should perhaps be in section 1.2
-**** dilemmas
+*** dilemmas
 section 1.2
 Perhaps we need two separate paths for kerl and pre-built packages?
 Or maybe just stick to kerl?
+* My Suggestion
+** Before we start
+We assume user has no working Erlang system and everything Erlang related
+can be uninstalled or deleted.
+We assume the user has Linux, OSX or similar.
+And uses sudo to install in /usr/local/bin.
+We use kerl to install Erlang.
+We decide on Erlang R16.
+** System cleanup
+Before we try again lets remove our failed attempts.
+remove following:
+rm -rvf ~/.erc/
+rm -rvf ~/.kerl/
+uninstall erlang if needed
+** Install lfetool
+$ curl -L -o ./lfetool \
+    https://raw.github.com/lfe/lfetool/stable/lfetool
+
+$ sudo bash lfetool install
+$ sudo lfetool -x
+$ chown $USER /usr/local/bin/lfetool
+
+** Install other dependencies
+$  lfetool install erlang R16B03-1 ~/kerl
