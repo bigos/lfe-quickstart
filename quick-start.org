@@ -21,7 +21,7 @@ Perhaps we need two separate paths for kerl and pre-built packages?
 Or maybe just stick to kerl?
 * My Suggestion
 ** Before we start
-We assume user has no working Erlang system and everything Erlang related
+   We assume user has no working Erlang system and everything Erlang related
 can be uninstalled or deleted.
 We assume the user has Linux, OSX or similar.
 And uses sudo to install in /usr/local/bin.
@@ -48,6 +48,8 @@ $ sudo lfetool -x
 $ sudo chown $USER /usr/local/bin/lfetool
 
 ** Install other dependencies
+Make sure ~/bin is in your $PATH
+
 Install kerl
 
 $ lfetool install kerl ~/bin
@@ -89,6 +91,22 @@ http://docs.lfe.io/quick-start/2.html
 
 And see expected error message.
 
-So far so good.
+Fix the error in:
+~/my-test-lib/src/my-test-lib.lfe
+so that the test can pass
+replacing:
+(defun my-adder (x y)
+  (+ x (+ y 1)))
+
+with:
+(defun my-adder (x y)
+  (+ x y))
+
+
+$ cd my-test-lib
+
+$ make check-unit
+
+the test should pass now
 
 * Am I doing it right?
