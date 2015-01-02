@@ -66,12 +66,14 @@ Make sure ~/bin is in your $PATH
 : $ echo $PATH
 
 should show your ~/bin somewhere in the PATH
+TODO: if somebody doesn't understand this convention then what?
+Recent Windows refugee might have a problem
 
-Install kerl
+*** Install kerl
 
 : $ lfetool install kerl ~/bin
 
-Install Erlang
+*** Install Erlang
 
 : $  lfetool install erlang R16B03-1 ~/kerl
 
