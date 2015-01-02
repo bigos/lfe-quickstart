@@ -42,21 +42,21 @@ We decide on Erlang R16.
 Before we try again lets remove our failed attempts.
 remove following:
 
+#+BEGIN_EXAMPLE
 rm -rvf ~/.erc/
-
 rm -rvf ~/.kerl/
+#+END_EXAMPLE
 
 uninstall erlang if needed
+
 ** Install lfetool
-$ curl -L -o ./lfetool \
 
-    https://raw.github.com/lfe/lfetool/stable/lfetool
-
+#+BEGIN_EXAMPLE
+$ curl -L -o ./lfetool https://raw.github.com/lfe/lfetool/stable/lfetool
 $ sudo bash lfetool install
-
 $ sudo lfetool -x
-
 $ sudo chown $USER /usr/local/bin/lfetool
+#+END_EXAMPLE
 
 ** Install other dependencies
 Make sure ~/bin is in your $PATH
