@@ -67,19 +67,21 @@ Install kerl
 
 Install Erlang
 
-$  lfetool install erlang R16B03-1 ~/kerl
+: $  lfetool install erlang R16B03-1 ~/kerl
 
 This installs Erlang in ~/kerl
 
 Next we need to activate our Erlang installation.
 
-$ . ~/kerl/activate
+: $ . ~/kerl/activate
 
 Now when we run:
 
-$ kerl status
+: $ kerl status
 
 We should see:
+
+#+BEGIN_EXAMPLE
 Available builds:
 R16B03-1,R16B03-1
 ----------
@@ -88,17 +90,20 @@ R16B03-1 /home/jacek/kerl
 ----------
 The current active installation is:
 /home/jacek/kerl
+#+END_EXAMPLE
 
 Also we can add it ot our ~/.bash_profile
 
-$ echo ". ~/kerl/activate" >> ~/.bash_profile
+: $ echo ". ~/kerl/activate" >> ~/.bash_profile
 
 *** Install rebar
- $ lfetool install rebar
+
+: $ lfetool install rebar
+
 ** Create New Project
 http://docs.lfe.io/quick-start/2.html
 
- $  lfetool new library my-test-lib
+: $  lfetool new library my-test-lib
 
 And see expected error message.
 
@@ -106,17 +111,21 @@ Fix the error in:
 ~/my-test-lib/src/my-test-lib.lfe
 so that the test can pass
 replacing:
+
+#+BEGIN_EXAMPLE
 (defun my-adder (x y)
   (+ x (+ y 1)))
+#+END_EXAMPLE
 
 with:
+
+#+BEGIN_EXAMPLE
 (defun my-adder (x y)
   (+ x y))
+#+END_EXAMPLE
 
-
-$ cd my-test-lib
-
-$ make check-unit
+: $ cd my-test-lib
+: $ make check-unit
 
 the test should pass now
 
