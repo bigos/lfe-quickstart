@@ -129,4 +129,23 @@ with:
 
 the test should pass now
 
-* Am I doing it right?
+* REPL
+
+Now let's try REPL
+
+: $ lfetool repl
+
+we should see:
+
+#+BEGIN_EXAMPLE
+Erlang R16B03-1 (erts-5.10.4) [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false]
+
+LFE Shell V5.10.4 (abort with ^G)
+>
+#+END_EXAMPLE
+
+try your first trivial Lisp code
+
+: > (+ 1 2 3)
+
+should give 6
