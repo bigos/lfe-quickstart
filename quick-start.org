@@ -135,6 +135,7 @@ Now let's try REPL
 
 : $ lfetool repl
 
+You will notice that your terminal prompt '$' will change into '>'
 we should see:
 
 #+BEGIN_EXAMPLE
@@ -153,7 +154,7 @@ should give 6
 ** Define your own function in REPL
 After the prompt > type following and press Enter:
 
-: (defun boo() (io:format "boo boo boo~n"))
+: > (defun boo() (io:format "boo boo boo~n"))
 
 now try typing (boo) after the prompt
 and you should get boo printed 3 times in the console.
@@ -168,10 +169,12 @@ and you should get boo printed 3 times in the console.
 
 load the code
 
-: (c "./src/my-test-lib")
+: > (c "./src/my-test-lib")
 
 and try it
 
-: (my-test-lib:substractor 7 2)
+: > (my-test-lib:substractor 7 2)
 
 If you get 5 the it seems your LFE installation works.
+
+* Hurray!
