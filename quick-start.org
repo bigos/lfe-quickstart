@@ -149,3 +149,29 @@ try your first trivial Lisp code
 : > (+ 1 2 3)
 
 should give 6
+
+** Define your own function in REPL
+After the prompt > type following and press Enter:
+
+: (defun boo() (io:format "boo boo boo~n"))
+
+now try typing (boo) after the prompt
+and you should get boo printed 3 times in the console.
+
+** Define a function in the source, load and execute it
+ Define a simple function
+
+#+BEGIN_EXAMPLE
+(defun my-substractor (x y)
+  (- x y))
+#+END_EXAMPLE
+
+load the code
+
+: (c "./src/my-test-lib")
+
+and try it
+
+: (my-test-lib:substractor 7 2)
+
+If you get 5 the it seems your LFE installation works.
