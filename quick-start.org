@@ -147,7 +147,7 @@ Now let's try REPL
 : $ lfetool repl
 
 You will notice that your terminal prompt '$' will change into '>'
-we should see:
+and you should see:
 
 #+BEGIN_EXAMPLE
 Erlang R16B03-1 (erts-5.10.4) [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false]
@@ -170,6 +170,8 @@ After the prompt > type following and press Enter:
 now try typing (boo) after the prompt
 and you should get boo printed 3 times in the console.
 
+better example might be needed...
+
 ** Define a function in the source, load and execute it
 
 Define a simple function in the source file
@@ -191,3 +193,20 @@ and try it
 If you get 5 then your LFE installation works.
 
 * Hurray!
+
+Now it's time to quit
+
+press Ctrl-G
+
+when you see:
+
+: User switch command
+:  -->
+
+press
+
+q
+
+That's it.
+
+* Further Reading
