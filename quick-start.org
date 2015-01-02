@@ -45,7 +45,7 @@ $ sudo bash lfetool install
 
 $ sudo lfetool -x
 
-$ chown $USER /usr/local/bin/lfetool
+$ sudo chown $USER /usr/local/bin/lfetool
 
 ** Install other dependencies
 $  lfetool install erlang R16B03-1 ~/kerl
