@@ -71,4 +71,14 @@ The current active installation is:
 /home/jacek/kerl
 
 Also we can add it ot our ~/.bash_profile
+
 $ echo ". ~/kerl/activate" >> ~/.bash_profile
+
+*** Install rebar
+ $ lfetool install rebar
+** Create New Project
+http://docs.lfe.io/quick-start/2.html
+
+ $  lfetool new library my-test-lib
+
+And see expected error message
