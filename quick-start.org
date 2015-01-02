@@ -38,6 +38,8 @@ We assume the user has Linux, OSX or similar.
 And uses sudo to install in /usr/local/bin.
 We use kerl to install Erlang.
 We decide on Erlang R16.
+Except lfetool everything is installed in users HOME directory.
+
 ** System cleanup
 Before we try again lets remove our failed attempts.
 remove following:
@@ -60,6 +62,10 @@ $ sudo chown $USER /usr/local/bin/lfetool
 
 ** Install other dependencies
 Make sure ~/bin is in your $PATH
+
+: $ echo $PATH
+
+should show your ~/bin somewhere in the PATH
 
 Install kerl
 
@@ -125,6 +131,9 @@ with:
 #+END_EXAMPLE
 
 : $ cd my-test-lib
+
+and run the test again
+
 : $ make check-unit
 
 the test should pass now
@@ -160,21 +169,23 @@ now try typing (boo) after the prompt
 and you should get boo printed 3 times in the console.
 
 ** Define a function in the source, load and execute it
- Define a simple function
+
+Define a simple function in the source file
+./src/my-test-lib.lfe
 
 #+BEGIN_EXAMPLE
 (defun my-substractor (x y)
   (- x y))
 #+END_EXAMPLE
 
-load the code
+load the code in REPL
 
 : > (c "./src/my-test-lib")
 
 and try it
 
-: > (my-test-lib:substractor 7 2)
+: > (my-test-lib:my-substractor 7 2)
 
-If you get 5 the it seems your LFE installation works.
+If you get 5 then your LFE installation works.
 
 * Hurray!
