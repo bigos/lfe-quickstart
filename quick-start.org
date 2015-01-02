@@ -81,4 +81,8 @@ http://docs.lfe.io/quick-start/2.html
 
  $  lfetool new library my-test-lib
 
-And see expected error message
+And see expected error message.
+
+So far so good.
+
+* Am I doing it right?
