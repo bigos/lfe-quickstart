@@ -49,3 +49,26 @@ $ chown $USER /usr/local/bin/lfetool
 
 ** Install other dependencies
 $  lfetool install erlang R16B03-1 ~/kerl
+
+This install kerl in ~/kerl
+
+Next we need to activate our Erlang installation.
+
+$ . ~/kerl/activate
+
+Now when we run:
+
+$ kerl status
+
+We should see:
+Available builds:
+R16B03-1,R16B03-1
+----------
+Available installations:
+R16B03-1 /home/jacek/kerl
+----------
+The current active installation is:
+/home/jacek/kerl
+
+Also we can add it ot our ~/.bash_profile
+$ echo ". ~/kerl/activate" >> ~/.bash_profile
