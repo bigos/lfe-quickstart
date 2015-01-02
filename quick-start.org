@@ -48,9 +48,15 @@ $ sudo lfetool -x
 $ sudo chown $USER /usr/local/bin/lfetool
 
 ** Install other dependencies
+Install kerl
+
+$ lfetool install kerl ~/bin
+
+Install Erlang
+
 $  lfetool install erlang R16B03-1 ~/kerl
 
-This install kerl in ~/kerl
+This installs Erlang in ~/kerl
 
 Next we need to activate our Erlang installation.
 
