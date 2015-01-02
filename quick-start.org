@@ -63,7 +63,7 @@ Make sure ~/bin is in your $PATH
 
 Install kerl
 
-$ lfetool install kerl ~/bin
+: $ lfetool install kerl ~/bin
 
 Install Erlang
 
