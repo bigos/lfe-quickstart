@@ -15,14 +15,19 @@ Before we try again lets remove our failed attempts.
 remove following:
 
 #+BEGIN_EXAMPLE
-rm -rvf ~/.erc/
-rm -rvf ~/.kerl/
+$ rm -rvf ~/.erc/
+$ rm -rvf ~/.kerl/
 #+END_EXAMPLE
 
 Uninstall Erlang if it was installed. In this example,
-instead using your package system we will use kerl to install Erlang.
+instead using your package system we will use kerl to install
+one of the latest versions Erlang.
 
 ** Install lfetool
+Please note that we use lfetool from
+dev-1 branch, so that we can use latest stable LFE.
+
+As lfetool progresses the url below will have to be updated.
 
 #+BEGIN_EXAMPLE
 $ curl -L -o ./lfetool https://raw.githubusercontent.com/lfe/lfetool/dev-v1/lfetool
