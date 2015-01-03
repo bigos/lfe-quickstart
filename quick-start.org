@@ -75,7 +75,7 @@ Recent Windows refugee might have a problem
 
 *** Install Erlang
 
-: $  lfetool install erlang 17.03 ~/kerl
+: $  lfetool install erlang 17.3 ~/kerl
 
 This installs Erlang in ~/kerl
 
