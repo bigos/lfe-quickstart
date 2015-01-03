@@ -75,7 +75,7 @@ Recent Windows refugee might have a problem
 
 *** Install Erlang
 
-: $  lfetool install erlang R16B03-1 ~/kerl
+: $  lfetool install erlang 17.03 ~/kerl
 
 This installs Erlang in ~/kerl
 
@@ -91,10 +91,10 @@ We should see:
 
 #+BEGIN_EXAMPLE
 Available builds:
-R16B03-1,R16B03-1
+17.3,17.3
 ----------
 Available installations:
-R16B03-1 /home/jacek/kerl
+17.3 /home/jacek/kerl
 ----------
 The current active installation is:
 /home/jacek/kerl
@@ -203,9 +203,7 @@ when you see:
 : User switch command
 :  -->
 
-press
-
-q
+type q and press Enter
 
 That's it.
 
