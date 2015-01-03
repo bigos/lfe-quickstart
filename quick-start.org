@@ -1,44 +1,14 @@
-* Yet Another LFE Quick Start
-** Purpose of this document
-To explain why documentation has to change and suggest solution.
-** Problems with Current Quick Guide
-Current quick guide http://docs.lfe.io/quick-start/1.html
-*** poorly designed structure.
-Googling for "writing structure" shows following at the very top:
-Written documents should be structured in a logical way, making them easier to
-follow.
+* Yet Another LFE 0.9.0 Quick Start
 
-At the moment It's difficult to follow the current Quick guide.
-
-/Suggestion:/
-
-What about, in the very beginning, giving an overview? E.g.:
-
-In this quick start, we will cover the following:
- * The tools necessary to get going quickly on LFE
- * Creating a new LFE project
- * Looking at LFE code in the REPL and in modules
- * Getting introduced to LFE project conveniences in the ``Makefile``
-
-*** out of date
-Perhaps something will be done about it.
-*** information in wrong place
-QS section 1.1
-Note that lfetool supports Erlang R15, R16, and 17.0.
-should perhaps be in section 1.2
-*** dilemmas
-section 1.2
-Perhaps we need two separate paths for kerl and pre-built packages?
-Or maybe just stick to kerl?
-* My Suggestion
 ** Before we start
-   We assume user has no working Erlang system and everything Erlang related
+We assume user has no working Erlang system and everything Erlang related
 can be uninstalled or deleted.
 We assume the user has Linux, OSX or similar.
-And uses sudo to install in /usr/local/bin.
+We uses sudo to install in /usr/local/bin.
 We use kerl to install Erlang.
-We decide on Erlang R16.
-Except lfetool everything is installed in users HOME directory.
+We decide on Erlang 17.3.
+Except lfetool executables are installed in users $HOME directory,
+or kerl installation directory.
 
 ** System cleanup
 Before we try again lets remove our failed attempts.
@@ -49,7 +19,8 @@ rm -rvf ~/.erc/
 rm -rvf ~/.kerl/
 #+END_EXAMPLE
 
-uninstall erlang if needed
+Uninstall Erlang if it was installed. In this example,
+instead using your package system we will use kerl to install Erlang.
 
 ** Install lfetool
 
@@ -109,7 +80,6 @@ Also we can add it ot our ~/.bash_profile
 : $ lfetool install rebar
 
 ** Create New Project
-http://docs.lfe.io/quick-start/2.html
 
 : $  lfetool new library my-test-lib
 
@@ -208,3 +178,14 @@ type q and press Enter
 That's it.
 
 * Further Reading
+None as yet
+
+* Work in Proggress
+
+/Future Plans:/
+
+In this quick start, we will cover the following:
+ * The tools necessary to get going quickly on LFE
+ * Creating a new LFE project
+ * Looking at LFE code in the REPL and in modules
+ * Getting introduced to LFE project conveniences in the ``Makefile``
