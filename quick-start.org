@@ -198,7 +198,7 @@ when you see:
 : User switch command
 :  -->
 
-type q and press Enter
+type *q* and press Enter
 
 That's it.
 
