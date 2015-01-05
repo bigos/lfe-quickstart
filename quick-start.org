@@ -203,7 +203,7 @@ type q and press Enter
 That's it.
 
 * Further Reading
-None as yet
+LFE documentation http://lfe.io/
 
 * Work in Proggress
 
