@@ -210,7 +210,4 @@ LFE documentation http://lfe.io/
 /Future Plans:/
 
 In this quick start, we will cover the following:
- * The tools necessary to get going quickly on LFE
- * Creating a new LFE project
  * Looking at LFE code in the REPL and in modules
- * Getting introduced to LFE project conveniences in the ``Makefile``
