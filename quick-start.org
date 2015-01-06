@@ -255,7 +255,7 @@ In this quick start, we will cover the following:
 <rvirding> 'lfetool new service ' creates a new application with lfe, lutil and ltest in the deps
 <jacek> got repl working
 <rvirding> much the same as rebar
-* rk[1] has quit (Read error: Connection reset by peer)
+ rk[1] has quit (Read error: Connection reset by peer)
 <jacek> :-)
 <jacek> so i guess it is roughly the same as using lfetool
 <jacek> how do i get rid of this:
@@ -277,3 +277,13 @@ In this quick start, we will cover the following:
 <jacek> ahh
 <jacek> thank you
 <rvirding> you lfe, lutil and ltest for the lfe bit, you add the other bits you need
+
+** command sequence
+
+: $ lfetool new library ooprrrs
+let it fail and copy deps folder from a lfetool created project
+
+: $ lfetool new library ooprrrs
+: $ cd ./ooprrrs: $make repl
+
+enjoy
