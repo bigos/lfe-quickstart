@@ -13,23 +13,6 @@ or kerl installation directory.
 ** System cleanup
 Before we try again lets remove our failed attempts.
 
-If $ kerl status shows anything installed, we need to delete it.
-
-#+BEGIN_EXAMPLE
-$ kerl status
-Available builds:
-R16B03-1,R16B03-1
-----------
-Available installations:
-R16B03-1 /Users/username/kerl
-----------
-The current active installation is:
-/Users/username/kerl
-#+END_EXAMPLE
-
-: $ kerl delete installation ~/kerl
-: The installation in /Users/jacekpodkanski/kerl has been deleted
-
 #+BEGIN_EXAMPLE
 $ rm -rvf ~/.erc/
 $ rm -rvf ~/.kerl/
@@ -197,6 +180,12 @@ when you see:
 type q and press Enter
 
 That's it.
+
+* Testing
+*cd* to your project and run:
+
+:$ lfetool tests unit
+
 
 * Further Reading
 None as yet
