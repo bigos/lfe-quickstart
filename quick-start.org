@@ -73,7 +73,7 @@ Recent Windows refugee might have a problem
 
 : $  lfetool install erlang 17.3 ~/erlang17.3
 
-This installs Erlang in ~/kerl
+This installs Erlang in ~/erlang17.3/
 
 Next we need to activate our Erlang installation.
 
