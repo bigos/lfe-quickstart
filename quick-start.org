@@ -13,12 +13,33 @@ or kerl installation directory.
 ** System cleanup
 Before we try again lets remove our failed attempts.
 
+If $ *kerl status* shows anything installed, we need to delete it.
+
+#+BEGIN_EXAMPLE
+$ kerl status
+Available builds:
+R16B03-1,R16B03-1
+----------
+Available installations:
+R16B03-1 /Users/username/kerl
+----------
+The current active installation is:
+/Users/username/kerl
+#+END_EXAMPLE
+
+: $ kerl delete installation ~/kerl
+: The installation in /Users/username/kerl has been deleted
+
+: $ kerl delete build R16B03-1
+: The R16B03-1 build has been deleted
+
+
 #+BEGIN_EXAMPLE
 $ rm -rvf ~/.erc/
 $ rm -rvf ~/.kerl/
 #+END_EXAMPLE
 
-Uninstall Erlang if it was installed. In this example,
+Uninstall Erlang if it was installed using binary packages. In this example,
 instead using your package system we will use kerl to install
 one of the latest versions Erlang.
 
@@ -50,13 +71,13 @@ Recent Windows refugee might have a problem
 
 *** Install Erlang
 
-: $  lfetool install erlang 17.3 ~/kerl
+: $  lfetool install erlang 17.3 ~/erlang17.3
 
 This installs Erlang in ~/kerl
 
 Next we need to activate our Erlang installation.
 
-: $ . ~/kerl/activate
+: $ . ~/erlang17.3/activate
 
 Now when we run:
 
@@ -69,15 +90,15 @@ Available builds:
 17.3,17.3
 ----------
 Available installations:
-17.3 /home/jacek/kerl
+17.3 /home/jacek/erlang17.3
 ----------
 The current active installation is:
-/home/jacek/kerl
+/home/jacek/erlang17.3
 #+END_EXAMPLE
 
-Also we can add it ot our ~/.bash_profile
+Also we can add it to our ~/.bash_profile
 
-: $ echo ". ~/kerl/activate" >> ~/.bash_profile
+: $ echo ". ~/erlang17.3/activate" >> ~/.bash_profile
 
 *** Install rebar
 
@@ -177,7 +198,7 @@ when you see:
 : User switch command
 :  -->
 
-type q and press Enter
+type *q* and press Enter
 
 That's it.
 
@@ -189,14 +210,25 @@ That's it.
 You might have to compile your code first (c "./src/myfile.lfe") to avoid undef error.
 
 * Further Reading
-None as yet
+LFE documentation http://lfe.io/
 
-* Work in Proggress
+* Work in Progress
 
 /Future Plans:/
 
 In this quick start, we will cover the following:
- * The tools necessary to get going quickly on LFE
- * Creating a new LFE project
  * Looking at LFE code in the REPL and in modules
- * Getting introduced to LFE project conveniences in the ``Makefile``
+
+** A Trick
+
+Starting a new project without the Internet connection
+
+: $ lfetool new library foo
+
+let it fail and then copy deps folder from another lfetool created project
+
+: $ cd foo
+: $ lfetool repl
+: > (+ 1 2 3)
+
+Enjoy newly created project.
