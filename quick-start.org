@@ -186,6 +186,7 @@ That's it.
 
 :$ lfetool tests unit
 
+You might have to compile your code first (c "./src/myfile.lfe") to avoid undef error.
 
 * Further Reading
 None as yet
