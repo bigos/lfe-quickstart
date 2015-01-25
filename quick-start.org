@@ -205,7 +205,7 @@ That's it.
 * Testing
 *cd* to your project and run:
 
-:$ lfetool tests unit
+: $ lfetool tests unit
 
 You might have to compile your code first (c "./src/myfile.lfe") to avoid undef error.
 
