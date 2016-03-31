@@ -52,7 +52,7 @@ should show your ~/bin somewhere in the PATH
 TODO: if somebody doesn't understand this convention then what?
 Recent Windows refugee might have a problem
 
-*** Install kerl
+*** Install kerl and build Erlang
 
 : $ cd ~/bin
 : $ curl -O https://raw.githubusercontent.com/yrashk/kerl/master/kerl
@@ -66,7 +66,7 @@ now if we type the command we should get expected result
 : $ kerl list builds
 18.0,18.0
 
-*** Install Erlang
+*** Install Erlang build
 
 : $ kerl install 18.0 ~/Programming/erlang_installations/18.0/
 
@@ -97,55 +97,55 @@ Also we can add it to our ~/.bash_profile
 : $ echo ". ~/Programming/erlang_installations/18.0/activate" >> ~/.bash_profile
 
 
-*** Install rebar
 
-: $ lfetool install rebar
+** Install LFE
 
-** Create New Project
+*** Building
+: $ cd ~/Programming
 
-: $  lfetool new library my-test-lib
-
-And see expected error message.
-
-Fix the error in:
-~/my-test-lib/src/my-test-lib.lfe
-so that the test can pass
-replacing:
-
+To compile LFE, simple clone it and compile:
 #+BEGIN_EXAMPLE
-(defun my-adder (x y)
-  (+ x (+ y 1)))
+    $ git clone https://github.com/rvirding/lfe.git
+    $ cd lfe
+    $ make compile
 #+END_EXAMPLE
 
-with:
+*** Installation
 
-#+BEGIN_EXAMPLE
-(defun my-adder (x y)
-  (+ x y))
-#+END_EXAMPLE
+: $ sudo make install
 
-: $ cd my-test-lib
+By default this will create the programs lfe, lfec and lfescript in the same
+directory as the erl program. We need sudo because some files are copied
+to /usr/local/man/ directories and symbolic links are created in /usr/local/bin
+your lfe, lfec and lfescript files.
 
-and run the test again
-
-: $ make check-unit
-
-the test should pass now
+This seems to be OK on single user system, but need review for system wide
+installation.
 
 * REPL
 
 Now let's try REPL
 
-: $ lfetool repl
+: $ lfe
 
 You will notice that your terminal prompt '$' will change into '>'
 and you should see:
 
 #+BEGIN_EXAMPLE
-Erlang R16B03-1 (erts-5.10.4) [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false]
+Erlang/OTP 18 [erts-7.0] [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false]
 
-LFE Shell V5.10.4 (abort with ^G)
+   ..-~.~_~---..
+  (      \\     )    |   A Lisp-2+ on the Erlang VM
+  |`-.._/_\\_.-';    |   Type (help) for usage info.
+  |         g (_ \   |
+  |        n    | |  |   Docs: http://docs.lfe.io/
+  (       a    / /   |   Source: http://github.com/rvirding/lfe
+   \     l    (_/    |
+    \   r     /      |   LFE v1.1-dev (abort with ^G)
+     `-E___.-'
+
 >
+
 #+END_EXAMPLE
 
 try your first trivial Lisp code
@@ -199,12 +199,6 @@ type *q* and press Enter
 
 That's it.
 
-* Testing
-*cd* to your project and run:
-
-: $ lfetool tests unit
-
-You might have to compile your code first (c "./src/myfile.lfe") to avoid undef error.
 
 * Further Reading
 LFE documentation http://lfe.io/
@@ -212,20 +206,3 @@ LFE documentation http://lfe.io/
 * Work in Progress
 
 /Future Plans:/
-
-In this quick start, we will cover the following:
- * Looking at LFE code in the REPL and in modules
-
-** A Trick
-
-Starting a new project without the Internet connection
-
-: $ lfetool new library foo
-
-let it fail and then copy deps folder from another lfetool created project
-
-: $ cd foo
-: $ lfetool repl
-: > (+ 1 2 3)
-
-Enjoy newly created project.
