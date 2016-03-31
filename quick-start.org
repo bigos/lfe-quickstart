@@ -43,19 +43,6 @@ Uninstall Erlang if it was installed using binary packages. In this example,
 instead using your package system we will use kerl to install
 one of the latest versions Erlang.
 
-** Install lfetool
-Please note that we use lfetool from
-dev-1 branch, so that we can use latest stable LFE.
-
-As lfetool progresses the url below will have to be updated.
-
-#+BEGIN_EXAMPLE
-$ curl -L -o ./lfetool https://raw.githubusercontent.com/lfe/lfetool/dev-v1/lfetool
-$ sudo bash lfetool install
-$ sudo lfetool -x
-$ sudo chown $USER /usr/local/bin/lfetool
-#+END_EXAMPLE
-
 ** Install other dependencies
 Make sure ~/bin is in your $PATH
 
@@ -67,17 +54,25 @@ Recent Windows refugee might have a problem
 
 *** Install kerl
 
-: $ lfetool install kerl ~/bin
+: $ cd ~/bin
+: $ curl -O https://raw.githubusercontent.com/yrashk/kerl/master/kerl
+: $ kerl list releases
+
+Pick your choice and build it:
+
+: $ kerl build 18.0 18.0
+
+now if we type the command we should get expected result
+: $ kerl list builds
+18.0,18.0
 
 *** Install Erlang
 
-: $  lfetool install erlang 17.3 ~/erlang17.3
+: $ kerl install 18.0 ~/Programming/erlang_installations/18.0/
 
-This installs Erlang in ~/erlang17.3/
+see the activation instructions and activate as in following example
 
-Next we need to activate our Erlang installation.
-
-: $ . ~/erlang17.3/activate
+: $ . /home/jacek/Programming/erlang_installations/18.0/activate
 
 Now when we run:
 
@@ -87,18 +82,20 @@ We should see:
 
 #+BEGIN_EXAMPLE
 Available builds:
-17.3,17.3
+18.0,18.0
 ----------
 Available installations:
-17.3 /home/jacek/erlang17.3
+18.0 /home/jacek/Programming/erlang_installations/18.0
 ----------
 The current active installation is:
-/home/jacek/erlang17.3
+/home/jacek/Programming/erlang_installations/18.0
+
 #+END_EXAMPLE
 
 Also we can add it to our ~/.bash_profile
 
-: $ echo ". ~/erlang17.3/activate" >> ~/.bash_profile
+: $ echo ". ~/Programming/erlang_installations/18.0/activate" >> ~/.bash_profile
+
 
 *** Install rebar
 
